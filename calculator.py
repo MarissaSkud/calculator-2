@@ -10,10 +10,44 @@ from arithmetic import *
 while True:
     user_input = input("> ")
     input_list = user_input.split(" ")
-    print(input_list)
-#     read input
-#     tokenize input
-#     if the first token is "q":
-#         quit
-#     else:
-#         decide which math function to call based on first token
+
+    if input_list[0] == "q":
+        break
+
+    elif input_list[0] == "+":
+        num1 = float(input_list[1])
+        num2 = float(input_list[2])
+        print(add(num1, num2))
+
+    elif input_list[0] == "-":
+        num1 = float(input_list[1])
+        num2 = float(input_list[2])
+        print(subtract(num1, num2))
+
+    elif input_list[0] == "*":
+        num1 = float(input_list[1])
+        num2 = float(input_list[2])
+        print(multiply(num1, num2))
+
+    elif input_list[0] == "/":
+        num1 = float(input_list[1])
+        num2 = float(input_list[2])
+        print(divide(num1, num2))
+
+    elif input_list[0] == "square":
+        num1 = float(input_list[1])
+        print(square(num1))
+
+    elif input_list[0] == "cube":
+        num1 = float(input_list[1])
+        print(cube(num1))
+
+    elif input_list[0] == "pow":
+        num1 = float(input_list[1])
+        num2 = float(input_list[2])
+        print(power(num1, num2))
+
+    elif input_list[0] == "mod":
+        num1 = float(input_list[1])
+        num2 = float(input_list[2])
+        print(mod(num1, num2))
