@@ -4,6 +4,8 @@ Using the arithmetic.py file from Calculator Part 1, create the
 calculator program yourself in this file.
 """
 
+# from functools import reduce
+
 from arithmetic import *
 
 while True:
@@ -19,11 +21,19 @@ while True:
         num2 = float(input_list[2])
     except IndexError:
         pass
+    except ValueError:
+        print("That's not a number")
 
     # for index, num in enumerate(input_list, start=1):
     #     float_list.append(float(num))
 
     # print(float_list)
+
+
+    # print ("The sum of the list elements is : ",end="") 
+    # print (functools.reduce(lambda a,b : a+b,lis)) 
+
+    print(functools.reduce(lambda num1,num2 : num1+num2, [input_list]))
 
     try:
 
@@ -53,6 +63,9 @@ while True:
 
         elif input_list[0] == "mod":
             print(mod(num1, num2))
+
+        else:
+            print("Command not recognized")
 
     except TypeError:
         print("This function needs a second number")
